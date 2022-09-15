@@ -14,12 +14,17 @@ namespace ProductComparable {
             list.Add(new Product("Sound Bar", 600.00));
             list.Add(new Product("Pendrive 256G", 150.00));
 
-            list.Sort();
+            
+            list.Sort(CompareProducts);
 
             foreach (Product p in list) {
                 Console.WriteLine(p);
             }
             Console.WriteLine();
+        }
+
+        static int CompareProducts(Product p1, Product p2) {
+            return p1.Name.CompareTo(p2.Name);
         }
     }
 }
